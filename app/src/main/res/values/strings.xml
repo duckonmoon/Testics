@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Testics</string>
+    <string name="mark_template">%d/%d</string>
+
+
+    <!-- res for test Python -->
+    <string name="python">Python</string>
+    <string name="python_question1">
+        What is output of this code?\ndef fun1(x):\n  return x + 1\ndef fun2(x, y=2):\n  return x + y\narr = [fun1, fun2]\nn = 0\nfor f in arr:\n  n += f(n)\nprint(n)
+    </string>
+
+    <string name="python_question2">
+        What is output of this code?\ndef generate():\nfor x in range(5):\n  yield x\nprint(list(generate()))
+    </string>
+
+    <string-array name="python_answers1">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="python_answers2">
+        <item>[4]</item>
+        <item>[0,1,2,3,4]</item>
+        <item>Error</item>
+        <item>[]</item>
+    </string-array>
+
+    <!-- res for test Java -->
+    <string name="java">Java</string>
+
+
+</resources>
