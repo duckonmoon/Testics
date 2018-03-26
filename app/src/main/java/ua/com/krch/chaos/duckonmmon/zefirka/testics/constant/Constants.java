@@ -12,7 +12,7 @@ public interface Constants {
     String TEST = "test";
 
     List<Test> tests = Arrays.asList(
-            new Test(R.string.python, R.drawable.python, 40, "PYTHON"),
+            new Test(R.string.python, R.drawable.python, 10, "PYTHON"),
             new Test(R.string.java, R.drawable.java, 20, "JAVA")
     );
 }
