@@ -46,6 +46,26 @@ print(anonymus2.nickname)
         What is the highest value that could be printed?\n\nimport random\nx = random.randint(0,120) % 55\nprint (x)
     </string>
 
+    <string name="python_correct1">4</string>
+
+    <string name="python_correct2">[0,1,2,3,4]</string>
+
+    <string name="python_correct3">21</string>
+
+    <string name="python_correct4">[1,2] 1 2</string>
+
+    <string name="python_correct5">hOLY</string>
+
+    <string name="python_correct6">3</string>
+
+    <string name="python_correct7">__geruliv = 5</string>
+
+    <string name="python_correct8">Borg</string>
+
+    <string name="python_correct9">function that modifies another\nfunction or method</string>
+
+    <string name="python_correct10">54</string>
+
     <string-array name="python_answers1">
         <item>2</item>
         <item>3</item>
