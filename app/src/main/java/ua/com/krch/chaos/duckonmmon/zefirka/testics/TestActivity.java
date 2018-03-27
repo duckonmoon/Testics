@@ -22,7 +22,7 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         ButterKnife.bind(this);
 
-        test = (Test) getIntent().getExtras().get(Constants.TEST);
+        test = (Test) getIntent().getSerializableExtra(Constants.TEST);
 
         textView.setText(test.getName());
     }
