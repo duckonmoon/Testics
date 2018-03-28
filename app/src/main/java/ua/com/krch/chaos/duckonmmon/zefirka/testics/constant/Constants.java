@@ -26,7 +26,7 @@ public interface Constants {
                             new ConstantQuestion(null,R.string.python_question9,R.string.python_correct9,R.array.python_answers9),
                             new ConstantQuestion(null,R.string.python_question10,R.string.python_correct10,R.array.python_answers10)
                     ),null),
-            new Test(R.string.python, R.drawable.python, 40, "PYTHON",null,null),
+            new Test(R.string.java, R.drawable.java, 20, "JAVA",null,null),
             new Test(R.string.capitals, R.drawable.capitals, 20, "CAPITAL",null,null)
     );
     int res020=R.drawable.res20_0;
