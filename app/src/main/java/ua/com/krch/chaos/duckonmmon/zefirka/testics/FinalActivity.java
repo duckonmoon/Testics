@@ -1,5 +1,6 @@
 package ua.com.krch.chaos.duckonmmon.zefirka.testics;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.application.App;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Test;
 
@@ -31,11 +33,13 @@ public class FinalActivity extends AppCompatActivity {
         final Random random = new Random();
         int result=random.nextInt(test.getMaxMark());
         textView.setText(""+result);
+        SharedPreferences.Editor editor= App.getINSTANCE().getPreferences().edit();
+        editor.putInt(test.getKey(), result);
+        editor.commit();
         double resultImage=(double)result/(double)test.getMaxMark()*100;
         if(resultImage<21)
         {
             imageView.setImageResource(Constants.res020);
-            textView.setText(""+resultImage);
         }
         else if(resultImage<41)
         {
