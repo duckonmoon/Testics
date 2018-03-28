@@ -6,12 +6,65 @@
     <!-- res for test Python -->
     <string name="python">Python</string>
     <string name="python_question1">
-        What is output of this code?\ndef fun1(x):\n  return x + 1\ndef fun2(x, y=2):\n  return x + y\narr = [fun1, fun2]\nn = 0\nfor f in arr:\n  n += f(n)\nprint(n)
+        What is output of this code?\n\ndef fun1(x):\n  return x + 1\ndef fun2(x, y=2):\n  return x + y\narr = [fun1, fun2]\nn = 0\nfor f in arr:\n  n += f(n)\nprint(n)
     </string>
 
     <string name="python_question2">
-        What is output of this code?\ndef generate():\nfor x in range(5):\n  yield x\nprint(list(generate()))
+        What is output of this code?\n\ndef generate():\nfor x in range(5):\n  yield x\nprint(list(generate()))
     </string>
+
+    <string name="python_question3">
+        What is output of this code?\n\ndef func(n):\n  y = \'+\'.join(str(x) for x in range(n))\n  return eval(y)\nprint(func(7))
+    </string>
+
+    <string name="python_question4">
+        What is output of this code?\n\na = [1,2]\nprint(a,*a)
+    </string>
+
+    <string name="python_question5">
+        What is output of this code?\n\nquote = "Holy"\nprint(quote.swapcase())
+    </string>
+
+    <string name="python_question6">
+        What is output of this code?\n\nlist = []\nfor i in range(5)[::-1]:\n  list.append(i)\nprint(list[1])
+    </string>
+
+    <string name="python_question7">
+        Which attribute from below is declared as strongly private?\n\n
+    </string>
+
+    <string name="python_question8">
+        What is output of this code?\n\nclass Friends:\n  def __init__(self,nickname):\n    self.nickname = nickname\nanonymus1 = Friends("Zorro")\nanonymus2 = Friends("Borg")\nanonymus3 = Friends("Xbox")
+print(anonymus2.nickname)
+    </string>
+
+    <string name="python_question9">
+        A decorator is a
+    </string>
+
+    <string name="python_question10">
+        What is the highest value that could be printed?\n\nimport random\nx = random.randint(0,120) % 55\nprint (x)
+    </string>
+
+    <string name="python_correct1">4</string>
+
+    <string name="python_correct2">[0,1,2,3,4]</string>
+
+    <string name="python_correct3">21</string>
+
+    <string name="python_correct4">[1,2] 1 2</string>
+
+    <string name="python_correct5">hOLY</string>
+
+    <string name="python_correct6">3</string>
+
+    <string name="python_correct7">__geruliv = 5</string>
+
+    <string name="python_correct8">Borg</string>
+
+    <string name="python_correct9">function that modifies another\nfunction or method</string>
+
+    <string name="python_correct10">54</string>
 
     <string-array name="python_answers1">
         <item>2</item>
@@ -25,6 +78,60 @@
         <item>[0,1,2,3,4]</item>
         <item>Error</item>
         <item>[]</item>
+    </string-array>
+    
+    <string-array name="python_answers3">
+        <item>21</item>
+        <item>7</item>
+        <item>28</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="python_answers4">
+        <item>1,2 [1,2]</item>
+        <item>[1,2,1,2]</item>
+        <item>[1,2] 1 2</item>
+        <item>[1,4]</item>
+    </string-array>
+
+    <string-array name="python_answers5">
+        <item>HOLY</item>
+        <item>hOLY</item>
+        <item>Holy</item>
+        <item>holy</item>
+    </string-array>
+
+    <string-array name="python_answers6">
+        <item>3</item>
+        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="python_answers7">
+        <item>_geruliv = 5</item>
+        <item>__geruliv = 5</item>
+        <item>private: geruliv = 5</item>
+    </string-array>
+
+    <string-array name="python_answers8">
+        <item>Zorro</item>
+        <item>Xbox</item>
+        <item>Error</item>
+        <item>Borg</item>
+    </string-array>
+
+    <string-array name="python_answers9">
+        <item>library.</item>
+        <item>function that modifies another\nfunction or method</item>
+        <item>method that overrides a function</item>
+    </string-array>
+
+    <string-array name="python_answers10">
+        <item>54</item>
+        <item>55</item>
+        <item>119</item>
+        <item>120</item>
     </string-array>
 
     <!-- res for test Java -->

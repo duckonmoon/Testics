@@ -27,7 +27,7 @@ public class FinalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_final);
         ButterKnife.bind(this);
 
-        test = (Test) getIntent().getExtras().get(Constants.TEST);
+        test = (Test) getIntent().getSerializableExtra(Constants.TEST);
         final Random random = new Random();
         int result=random.nextInt(test.getMaxMark());
         textView.setText(""+result);

@@ -19,6 +19,12 @@ public class ChooseTestActivity extends AppCompatActivity {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
 
+    ListAdapter.OnItemClickListener listener = position -> {
+        Intent intent = new Intent(this, FinalActivity.class);
+        intent.putExtra(Constants.TEST, Constants.tests.get(position));
+        startActivity(intent);
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +32,6 @@ public class ChooseTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose_test);
         ButterKnife.bind(this);
 
-/*
-     ListAdapter.OnItemClickListener listener = position -> {
-            Intent intent = new Intent(this, TestActivity.class);
-            intent.putExtra(Constants.TEST, Constants.tests.get(position));
-            startActivity(intent);
-        };
-
-        */
-
-
-        ListAdapter.OnItemClickListener listener = position -> {
-            Intent intent = new Intent(this, FinalActivity.class);
-            intent.putExtra(Constants.TEST, Constants.tests.get(position));
-            startActivity(intent);
-        };
         ListAdapter listAdapter = new ListAdapter(Constants.tests, listener);
         LinearLayoutManager manager = new LinearLayoutManager(this);
 
