@@ -8,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ua.com.krch.chaos.duckonmmon.zefirka.testics.FinalActivity;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
-import ua.com.krch.chaos.duckonmmon.zefirka.testics.TestActivity;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.adapter.ListAdapter;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
 
@@ -37,5 +35,11 @@ public class ChooseTestActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(listAdapter);
         recyclerView.setLayoutManager(manager);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        recyclerView.getAdapter().notifyDataSetChanged();
     }
 }

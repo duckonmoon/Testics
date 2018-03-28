@@ -1,4 +1,4 @@
-package ua.com.krch.chaos.duckonmmon.zefirka.testics;
+package ua.com.krch.chaos.duckonmmon.zefirka.testics.activity;
 
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.application.App;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Test;
@@ -23,6 +24,7 @@ public class FinalActivity extends AppCompatActivity {
     ImageView imageView;
 
     private Test test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,27 +33,32 @@ public class FinalActivity extends AppCompatActivity {
 
         test = (Test) getIntent().getSerializableExtra(Constants.TEST);
         final Random random = new Random();
-        int result=random.nextInt(test.getMaxMark());
-        textView.setText(""+result);
-        SharedPreferences.Editor editor= App.getINSTANCE().getPreferences().edit();
+        int result = random.nextInt(test.getMaxMark()+1);
+       // int result=10;
+        textView.setText("" + result);
+        saveData(result);
+        setImage(result);
+    }
+
+    private void saveData(int result) {
+        int maxResult=App.getINSTANCE().getPreferences().getInt(test.getKey(), 0);
+        if(maxResult<result)
+        { SharedPreferences.Editor editor = App.getINSTANCE().getPreferences().edit();
         editor.putInt(test.getKey(), result);
-        editor.commit();
-        double resultImage=(double)result/(double)test.getMaxMark()*100;
-        if(resultImage<21)
-        {
+        editor.apply();}
+    }
+
+    private void setImage(int result) {
+        double resultImage = (double) result / (double) test.getMaxMark() * 100;
+        if (resultImage < 21) {
             imageView.setImageResource(Constants.res020);
-        }
-        else if(resultImage<41)
-        {
+        } else if (resultImage < 41) {
             imageView.setImageResource(Constants.res2040);
-        }else if(resultImage<61)
-        {
+        } else if (resultImage < 61) {
             imageView.setImageResource(Constants.res4060);
-        }else if(resultImage<81)
-        {
+        } else if (resultImage < 81) {
             imageView.setImageResource(Constants.res6080);
-        }else
-        {
+        } else {
             imageView.setImageResource(Constants.res80100);
         }
     }

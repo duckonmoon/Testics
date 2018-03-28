@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ua.com.krch.chaos.duckonmmon.zefirka.testics.FinalActivity">
+    android:background="@drawable/backgr"
+    tools:context="ua.com.krch.chaos.duckonmmon.zefirka.testics.activity.FinalActivity">
 
     <TextView
         android:id="@+id/result"
