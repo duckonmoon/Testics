@@ -79,7 +79,7 @@ print(anonymus2.nickname)
         <item>Error</item>
         <item>[]</item>
     </string-array>
-    
+
     <string-array name="python_answers3">
         <item>21</item>
         <item>7</item>
@@ -540,5 +540,9 @@ print(anonymus2.nickname)
         <item>Lusaka</item>
         <item>Harare</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="finish">Finish</string>
 
 </resources>

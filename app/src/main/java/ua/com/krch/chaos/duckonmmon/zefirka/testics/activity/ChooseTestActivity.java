@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.TestActivity;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.adapter.ListAdapter;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
 
@@ -18,7 +19,7 @@ public class ChooseTestActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     ListAdapter.OnItemClickListener listener = position -> {
-        Intent intent = new Intent(this, FinalActivity.class);
+        Intent intent = new Intent(this, TestActivity.class);
         intent.putExtra(Constants.TEST, Constants.tests.get(position));
         startActivity(intent);
     };
