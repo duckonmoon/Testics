@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OURANDROID.iml" filepath="$PROJECT_DIR$/OURANDROID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Testics.iml" filepath="$PROJECT_DIR$/Testics.iml" />
       <module fileurl="file://D:/OURANDROID/Testics.iml" filepath="D:/OURANDROID/Testics.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testics.iml" filepath="$PROJECT_DIR$/testics.iml" />
     </modules>
   </component>
 </project>
