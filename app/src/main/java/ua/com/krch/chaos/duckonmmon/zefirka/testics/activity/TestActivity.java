@@ -87,13 +87,13 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
+        private ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            return ItemViewPagerFragment.newInstance(test, position);
+            return ItemViewPagerFragment.newInstance(test, position,answersList.get(position));
         }
 
         @Override
