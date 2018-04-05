@@ -26,6 +26,7 @@ public class ItemViewPagerFragment extends Fragment {
     private static final String TEST = "test";
     private static final String POSITION = "position";
     private static final String PREVIOUS_ANSWER = "previous answer";
+    private static final String QUESTION = "question";
 
     @BindView(R.id.question_text)
     TextView questionTextView;
@@ -40,6 +41,7 @@ public class ItemViewPagerFragment extends Fragment {
 
     private Test test;
     private Integer position;
+    private Question question;
     private String answer;
 
     private OnFragmentRadioButtonClickListener mListener;
@@ -47,12 +49,13 @@ public class ItemViewPagerFragment extends Fragment {
     public ItemViewPagerFragment() {
     }
 
-    public static ItemViewPagerFragment newInstance(Test test, Integer position,String answer) {
+    public static ItemViewPagerFragment newInstance(Test test, Integer position, String answer, Question question) {
         ItemViewPagerFragment fragment = new ItemViewPagerFragment();
         Bundle args = new Bundle();
         args.putSerializable(TEST, test);
         args.putInt(POSITION, position);
         args.putString(PREVIOUS_ANSWER, answer);
+        args.putSerializable(QUESTION, question);
         fragment.setArguments(args);
         return fragment;
     }
@@ -64,6 +67,7 @@ public class ItemViewPagerFragment extends Fragment {
             test = (Test) getArguments().getSerializable(TEST);
             position = getArguments().getInt(POSITION, -1);
             answer = getArguments().getString(PREVIOUS_ANSWER);
+            question = (Question) getArguments().getSerializable(QUESTION);
         }
     }
 
@@ -72,8 +76,6 @@ public class ItemViewPagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_view_pager, container, false);
         ButterKnife.bind(this, view);
-
-        Question question = QuestionProviderService.getQuestion(test.getQuestions().get(position), test.getRandomAnswers(),test.getRandomAnswersArray());
 
         questionTextView.setText(question.getQuestion());
         if (question.getImage() != null) {
@@ -84,7 +86,7 @@ public class ItemViewPagerFragment extends Fragment {
         finishButton.setOnClickListener((v) -> mListener.OnFinishClick());
         finishButton.setVisibility(position == (test.getQuestions().size() - 1) ? View.VISIBLE : View.GONE);
 
-        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer,position)),getCorrectPosition(question)));
+        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer, position)), getCorrectPosition(question)));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
@@ -106,10 +108,10 @@ public class ItemViewPagerFragment extends Fragment {
         mListener = null;
     }
 
-    private Integer getCorrectPosition(Question question){
-        if (answer!=null){
-            for (int i = 0; i < question.getAnswers().size(); i++){
-                if (answer.equals(question.getAnswers().get(i))){
+    private Integer getCorrectPosition(Question question) {
+        if (answer != null) {
+            for (int i = 0; i < question.getAnswers().size(); i++) {
+                if (answer.equals(question.getAnswers().get(i))) {
                     return i;
                 }
             }
@@ -118,7 +120,7 @@ public class ItemViewPagerFragment extends Fragment {
     }
 
     public interface OnFragmentRadioButtonClickListener {
-        void OnClick(String answer,Integer position);
+        void OnClick(String answer, Integer position);
 
         void OnFinishClick();
     }

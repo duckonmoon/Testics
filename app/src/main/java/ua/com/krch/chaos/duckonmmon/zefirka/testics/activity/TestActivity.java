@@ -15,8 +15,10 @@ import butterknife.ButterKnife;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.animation.ZoomOutPageTransformer;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Question;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Test;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.fragment.ItemViewPagerFragment;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.service.QuestionProviderService;
 
 public class TestActivity extends AppCompatActivity implements ItemViewPagerFragment.OnFragmentRadioButtonClickListener {
 
@@ -26,6 +28,7 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
     private Test test;
 
     private ArrayList<String> answersList;
+    private ArrayList<Question> questions = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,15 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
 
         initializeArrayList();
 
+        initQuestions();
+
         setUpViewPager();
+    }
+
+    private void initQuestions() {
+        for (int i = 0; i < test.getMaxMark(); i++){
+            questions.add(QuestionProviderService.getQuestion(test.getQuestions().get(i), test.getRandomAnswers(), test.getRandomAnswersArray()));
+        }
     }
 
     @Override
@@ -93,7 +104,7 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
 
         @Override
         public Fragment getItem(int position) {
-            return ItemViewPagerFragment.newInstance(test, position,answersList.get(position));
+            return ItemViewPagerFragment.newInstance(test, position,answersList.get(position),questions.get(position));
         }
 
         @Override
