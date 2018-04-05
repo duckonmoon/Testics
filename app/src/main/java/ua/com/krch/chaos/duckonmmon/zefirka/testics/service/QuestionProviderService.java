@@ -17,14 +17,14 @@ public final class QuestionProviderService {
 
     private static App app = App.getINSTANCE();
 
-    public static Question getQuestion(ConstantQuestion constantQuestion,List<Integer> randomAnswer){
+    public static Question getQuestion(ConstantQuestion constantQuestion,List<Integer> randomAnswer,Integer randomA){
         Question question = new Question();
         question.setImage(constantQuestion.getImage());
         question.setQuestion(app.getString(constantQuestion.getQuestion()));
         question.setCorrectAnswer(app.getString(constantQuestion.getCorrectAnswer()));
-        if (randomAnswer == null){
+        if (randomAnswer == null && randomA == null){
             question.setAnswers(Arrays.asList(app.getResources().getStringArray(constantQuestion.getAnswers())));
-        } else {
+        } else if (randomA == null) {
             Collections.shuffle(randomAnswer);
             ArrayList<String> answers = new ArrayList<>();
             int count = 3;
@@ -36,6 +36,22 @@ public final class QuestionProviderService {
                 }
             }
             answers.add(app.getString(constantQuestion.getCorrectAnswer()));
+            Collections.shuffle(answers);
+            question.setAnswers(answers);
+        } else {
+            List<String> answ = Arrays.asList(app.getResources().getStringArray(randomA));
+            String correctAnswer = app.getString(constantQuestion.getCorrectAnswer());
+            Collections.shuffle(answ);
+            ArrayList<String> answers = new ArrayList<>();
+            int count = 3;
+            for (int i = 0; i < count; i++){
+                if (!answ.get(i).equals(correctAnswer)){
+                    answers.add(answ.get(i));
+                } else {
+                    count+=1;
+                }
+            }
+            answers.add(correctAnswer);
             Collections.shuffle(answers);
             question.setAnswers(answers);
         }

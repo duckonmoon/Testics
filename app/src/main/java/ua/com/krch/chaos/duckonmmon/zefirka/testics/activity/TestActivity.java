@@ -1,11 +1,12 @@
 package ua.com.krch.chaos.duckonmmon.zefirka.testics.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import java.util.ArrayList;
 
@@ -34,23 +35,22 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
 
         test = (Test) getIntent().getSerializableExtra(Constants.TEST);
 
-        answersList = new ArrayList<>();
+        initializeArrayList();
 
-        ScreenSlidePagerAdapter screenSlidePagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(screenSlidePagerAdapter);
-        viewPager.setPageTransformer(true,new ZoomOutPageTransformer());
-
-
+        setUpViewPager();
     }
 
     @Override
-    public void OnClick(String answer) {
-
+    public void OnClick(String answer, Integer position) {
+        answersList.set(position, answer);
     }
 
     @Override
     public void OnFinishClick() {
-
+        Intent intent = new Intent(this, FinalActivity.class);
+        intent.putExtra(Constants.TEST,test);
+        intent.putExtra(Constants.RESULT,findResult());
+        startActivity(intent);
     }
 
     @Override
@@ -62,14 +62,38 @@ public class TestActivity extends AppCompatActivity implements ItemViewPagerFrag
         }
     }
 
+    private void initializeArrayList(){
+        answersList = new ArrayList<>();
+        for (int i = 0; i < test.getMaxMark(); i++) {
+            answersList.add("");
+        }
+    }
+
+    private void setUpViewPager() {
+        ScreenSlidePagerAdapter screenSlidePagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(screenSlidePagerAdapter);
+        viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+    }
+
+    private int findResult(){
+        int result = 0;
+        for (int i = 0; i < answersList.size(); i++){
+            if (answersList.get(i).equals(getString(test.getQuestions().get(i).getCorrectAnswer()))){
+                result++;
+            }
+        }
+
+        return result;
+    }
+
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
+        private ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            return ItemViewPagerFragment.newInstance(test,position);
+            return ItemViewPagerFragment.newInstance(test, position,answersList.get(position));
         }
 
         @Override

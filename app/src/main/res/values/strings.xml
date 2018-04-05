@@ -141,6 +141,247 @@ print(anonymus2.nickname)
     <!-- res for test Capitals -->
     <string name="capitals">Capitals</string>
 
+    <string name="capitals_question1">
+        Indicate the capital\nAfghanistan
+    </string>
+
+    <string name="capitals_correct1">Kabul</string>
+
+    <string name="capitals_question2">
+        Indicate the capital\nArgentina
+    </string>
+
+    <string name="capitals_correct2">Buenos Aires</string>
+
+    <string name="capitals_question3">
+        Indicate the capital\nArmenia
+    </string>
+
+    <string name="capitals_correct3">Yerevan</string>
+
+    <string name="capitals_question4">
+        Indicate the capital\nAustralia
+    </string>
+
+    <string name="capitals_correct4">Canberra</string>
+
+    <string name="capitals_question5">
+        Indicate the capital\nAustria
+    </string>
+
+    <string name="capitals_correct5">Vienna</string>
+
+    <string name="capitals_question6">
+        Indicate the capital\nAzerbaijan
+    </string>
+
+    <string name="capitals_correct6">Baku</string>
+
+    <string name="capitals_question7">
+        Indicate the capital\nBelgium
+    </string>
+
+    <string name="capitals_correct7">Brussels</string>
+
+    <string name="capitals_question8">
+        Indicate the capital\nBosnia and Herzegovina
+    </string>
+
+    <string name="capitals_correct8">Sarajevo</string>
+
+    <string name="capitals_question9">
+        Indicate the capital\nBulgaria
+    </string>
+
+    <string name="capitals_correct9">Sofia</string>
+
+    <string name="capitals_question10">
+        Indicate the capital\nCambodia
+    </string>
+
+    <string name="capitals_correct10">Phnom Penh</string>
+
+    <string name="capitals_question12">
+        Indicate the capital\nChile
+    </string>
+
+    <string name="capitals_correct12">Santiago</string>
+
+    <string name="capitals_question13">
+        Indicate the capital\nChina
+    </string>
+
+    <string name="capitals_correct13">Beijing</string>
+
+    <string name="capitals_question14">
+        Indicate the capital\nCroatia
+    </string>
+
+    <string name="capitals_correct14">Zagreb</string>
+
+    <string name="capitals_question15">
+        Indicate the capital\nCuba
+    </string>
+
+    <string name="capitals_correct15">Havana</string>
+
+    <string name="capitals_question16">
+        Indicate the capital\nDenmark
+    </string>
+
+    <string name="capitals_correct16">Copenhagen</string>
+
+    <string name="capitals_question17">
+        Indicate the capital\nEgypt
+    </string>
+
+    <string name="capitals_correct17">Cairo</string>
+
+    <string name="capitals_question18">
+        Indicate the capital\nGeorgia
+    </string>
+
+    <string name="capitals_correct18">Tbilisi</string>
+
+    <string name="capitals_question19">
+        Indicate the capital\nHaiti
+    </string>
+
+    <string name="capitals_correct19">Port-au-Prince</string>
+
+    <string name="capitals_question20">
+        Indicate the capital\nIran
+    </string>
+
+    <string name="capitals_correct20">Tehran</string>
+
+    <string name="capitals_question21">
+        Indicate the capital\nIraq
+    </string>
+
+    <string name="capitals_correct21">Baghdad</string>
+
+    <string name="capitals_question22">
+        Indicate the capital\nJapan
+    </string>
+
+    <string name="capitals_correct22">Tokyo</string>
+
+    <string name="capitals_question23">
+        Indicate the capital\nKazakhstan
+    </string>
+
+    <string name="capitals_correct23">Astana</string>
+
+    <string name="capitals_question24">
+        Indicate the capital\nKyrgyzstan
+    </string>
+
+    <string name="capitals_correct24">Bishkek</string>
+
+    <string name="capitals_question25">
+        Indicate the capital\nLatvia
+    </string>
+
+    <string name="capitals_correct25">Riga</string>
+
+    <string name="capitals_question26">
+        Indicate the capital\nLibya
+    </string>
+
+    <string name="capitals_correct26">Tripoli</string>
+
+    <string name="capitals_question27">
+        Indicate the capital\nLiechtenstein
+    </string>
+
+    <string name="capitals_correct27">Vaduz</string>
+
+    <string name="capitals_question28">
+        Indicate the capital\nMacedonia
+    </string>
+
+    <string name="capitals_correct28">Skopje</string>
+
+    <string name="capitals_question29">
+        Indicate the capital\nMalaysia
+    </string>
+
+    <string name="capitals_correct29">Kuala Lumpur</string>
+
+    <string name="capitals_question30">
+        Indicate the capital\nMalta
+    </string>
+
+    <string name="capitals_correct30">Valletta</string>
+
+    <string name="capitals_question31">
+        Indicate the capital\nMauritius
+    </string>
+
+    <string name="capitals_correct31">Valletta</string>
+
+    <string name="capitals_question32">
+        Indicate the capital\nMoldova
+    </string>
+
+    <string name="capitals_correct32">Chisinau</string>
+
+    <string name="capitals_question33">
+        Indicate the capital\nMontenegro
+    </string>
+
+    <string name="capitals_correct33">Podgorica</string>
+
+    <string name="capitals_question34">
+        Indicate the capital\nNew Zealand
+    </string>
+
+    <string name="capitals_correct34">Wellington</string>
+
+    <string name="capitals_question35">
+        Indicate the capital\nOman
+    </string>
+
+    <string name="capitals_correct35">Muscat</string>
+
+    <string name="capitals_question36">
+        Indicate the capital\nPapua New Guinea
+    </string>
+
+    <string name="capitals_correct36">Port Moresby</string>
+
+    <string name="capitals_question37">
+        Indicate the capital\nSaudi Arabia
+    </string>
+
+    <string name="capitals_correct37">Riyadh</string>
+
+    <string name="capitals_question38">
+        Indicate the capital\nSerbia
+    </string>
+
+    <string name="capitals_correct38">Belgrade</string>
+
+    <string name="capitals_question39">
+        Indicate the capital\nSyria
+    </string>
+
+    <string name="capitals_correct39">Damascus</string>
+
+    <string name="capitals_question40">
+        Indicate the capital\nVietnam
+    </string>
+
+    <string name="capitals_correct40">Hanoi</string>
+
+    <string name="capitals_question11">
+        Indicate the capital\nSweden
+    </string>
+
+    <string name="capitals_correct11">Stockholm</string>
+
+
     <string-array name="capital_question">
         <item>Afghanistan</item>
         <item>Albania</item>
@@ -340,7 +581,6 @@ print(anonymus2.nickname)
         <item>Zambia</item>
         <item>Zimbabwe</item>
     </string-array>
-
     <string-array name="capital_answer">
         <item>Kabul</item>
         <item>Tirana</item>

@@ -24,9 +24,10 @@ public class RadioButtonAdapter extends RecyclerView.Adapter<RadioButtonAdapter.
     private App app = App.getINSTANCE();
     private int checkedPosition = -1;
 
-    public RadioButtonAdapter(List<String> answers, OnItemClickListener onItemClickListener) {
+    public RadioButtonAdapter(List<String> answers, OnItemClickListener onItemClickListener,int checkedPosition) {
         this.answers = answers;
         listener = onItemClickListener;
+        this.checkedPosition = checkedPosition;
     }
 
     @NonNull

@@ -14,6 +14,8 @@ public class Test implements Serializable {
      */
     private List<Integer> randomAnswers;
 
+    private Integer randomAnswersArray = null;
+
     public Test(Integer name, Integer image, Integer maxMark, String key,List<ConstantQuestion> questions,List<Integer> randomAnswers) {
         this.name = name;
         this.image = image;
@@ -21,6 +23,15 @@ public class Test implements Serializable {
         this.key = key;
         this.questions = questions;
         this.randomAnswers = randomAnswers;
+    }
+
+    public Test(Integer name, Integer image, Integer maxMark, String key,List<ConstantQuestion> questions,int randomAnswersArray) {
+        this.name = name;
+        this.image = image;
+        this.maxMark = maxMark;
+        this.key = key;
+        this.questions = questions;
+        this.randomAnswersArray = randomAnswersArray;
     }
 
     public Test() {
@@ -72,5 +83,13 @@ public class Test implements Serializable {
 
     public void setRandomAnswers(List<Integer> randomAnswers) {
         this.randomAnswers = randomAnswers;
+    }
+
+    public Integer getRandomAnswersArray() {
+        return randomAnswersArray;
+    }
+
+    public void setRandomAnswersArray(Integer randomAnswersArray) {
+        this.randomAnswersArray = randomAnswersArray;
     }
 }
