@@ -22,7 +22,7 @@ public final class QuestionProviderService {
         question.setImage(constantQuestion.getImage());
         question.setQuestion(app.getString(constantQuestion.getQuestion()));
         question.setCorrectAnswer(app.getString(constantQuestion.getCorrectAnswer()));
-        if (randomAnswer == null){
+        if (randomAnswer == null && randomA == null){
             question.setAnswers(Arrays.asList(app.getResources().getStringArray(constantQuestion.getAnswers())));
         } else if (randomA == null) {
             Collections.shuffle(randomAnswer);
