@@ -32,9 +32,8 @@ public class FinalActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         test = (Test) getIntent().getSerializableExtra(Constants.TEST);
-        final Random random = new Random();
-        int result = random.nextInt(test.getMaxMark()+1);
-       // int result=10;
+        int result = getIntent().getIntExtra(Constants.RESULT,0);
+
         textView.setText("" + result);
         saveData(result);
         setImage(result);

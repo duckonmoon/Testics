@@ -11,6 +11,7 @@ import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Test;
 public interface Constants {
     String PREFERENCES = "preferences";
     String TEST = "test";
+    String RESULT = "result";
 
     List<Test> tests = Arrays.asList(
             new Test(R.string.python, R.drawable.python, 10, "PYTHON",

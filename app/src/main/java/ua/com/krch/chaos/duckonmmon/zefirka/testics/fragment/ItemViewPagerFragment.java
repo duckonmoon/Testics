@@ -25,6 +25,7 @@ import ua.com.krch.chaos.duckonmmon.zefirka.testics.service.QuestionProviderServ
 public class ItemViewPagerFragment extends Fragment {
     private static final String TEST = "test";
     private static final String POSITION = "position";
+    private static final String PREVIOUS_ANSWER = "previous answer";
 
     @BindView(R.id.question_text)
     TextView questionTextView;
@@ -39,17 +40,19 @@ public class ItemViewPagerFragment extends Fragment {
 
     private Test test;
     private Integer position;
+    private String answer;
 
     private OnFragmentRadioButtonClickListener mListener;
 
     public ItemViewPagerFragment() {
     }
 
-    public static ItemViewPagerFragment newInstance(Test test, Integer position) {
+    public static ItemViewPagerFragment newInstance(Test test, Integer position,String answer) {
         ItemViewPagerFragment fragment = new ItemViewPagerFragment();
         Bundle args = new Bundle();
         args.putSerializable(TEST, test);
         args.putInt(POSITION, position);
+        args.putString(PREVIOUS_ANSWER, answer);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,6 +63,7 @@ public class ItemViewPagerFragment extends Fragment {
         if (getArguments() != null) {
             test = (Test) getArguments().getSerializable(TEST);
             position = getArguments().getInt(POSITION, -1);
+            answer = getArguments().getString(PREVIOUS_ANSWER);
         }
     }
 
@@ -80,7 +84,7 @@ public class ItemViewPagerFragment extends Fragment {
         finishButton.setOnClickListener((v) -> mListener.OnFinishClick());
         finishButton.setVisibility(position == (test.getQuestions().size() - 1) ? View.VISIBLE : View.GONE);
 
-        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer))));
+        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer,position)),getCorrectPosition(question)));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
@@ -102,8 +106,19 @@ public class ItemViewPagerFragment extends Fragment {
         mListener = null;
     }
 
+    private Integer getCorrectPosition(Question question){
+        if (answer!=null){
+            for (int i = 0; i < question.getAnswers().size(); i++){
+                if (answer.equals(question.getAnswers().get(i))){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
     public interface OnFragmentRadioButtonClickListener {
-        void OnClick(String answer);
+        void OnClick(String answer,Integer position);
 
         void OnFinishClick();
     }
