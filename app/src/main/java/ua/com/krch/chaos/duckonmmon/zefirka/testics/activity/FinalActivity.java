@@ -58,7 +58,7 @@ public class FinalActivity extends AppCompatActivity {
         } else if (resultImage < 81) {
             imageView.setImageResource(Constants.res6080);
         } else {
-            imageView.setImageResource(Constants.res80100);
+            imageView.setImageResource(R.drawable.genius);
         }
     }
 
