@@ -1,10 +1,10 @@
 package ua.com.krch.chaos.duckonmmon.zefirka.testics.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
-import ua.com.krch.chaos.duckonmmon.zefirka.testics.activity.FinalActivity;
+import ua.com.krch.chaos.duckonmmon.zefirka.testics.adapter.RadioButtonAdapter;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.application.App;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Question;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.entity.Test;
@@ -75,11 +75,13 @@ public class ItemViewPagerFragment extends Fragment {
         if (question.getImage() != null) {
             questionImageView.setImageResource(question.getImage());
         }
-        progressTextView.setText(App.getINSTANCE().getString(R.string.mark_template,position,test.getMaxMark()));
+        progressTextView.setText(App.getINSTANCE().getString(R.string.mark_template, position + 1, test.getMaxMark()));
 
         finishButton.setOnClickListener((v) -> mListener.OnFinishClick());
         finishButton.setVisibility(position == (test.getQuestions().size() - 1) ? View.VISIBLE : View.GONE);
 
+        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer))));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
 

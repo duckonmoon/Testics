@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.R;
-import ua.com.krch.chaos.duckonmmon.zefirka.testics.TestActivity;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.adapter.ListAdapter;
 import ua.com.krch.chaos.duckonmmon.zefirka.testics.constant.Constants;
 
