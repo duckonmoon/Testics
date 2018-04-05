@@ -17,9 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.TestActivity" android:screenOrientation="portrait" android:noHistory="true"/>
         <activity android:name=".activity.FinalActivity" />
-        <activity android:name=".DeteleAfterUse" />
     </application>
 
 </manifest>

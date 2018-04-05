@@ -80,7 +80,7 @@ public class ItemViewPagerFragment extends Fragment {
         finishButton.setOnClickListener((v) -> mListener.OnFinishClick());
         finishButton.setVisibility(position == (test.getQuestions().size() - 1) ? View.VISIBLE : View.GONE);
 
-        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer))));
+        recyclerView.setAdapter(new RadioButtonAdapter(question.getAnswers(), (answer -> mListener.OnClick(answer,position))));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
@@ -103,7 +103,7 @@ public class ItemViewPagerFragment extends Fragment {
     }
 
     public interface OnFragmentRadioButtonClickListener {
-        void OnClick(String answer);
+        void OnClick(String answer,Integer position);
 
         void OnFinishClick();
     }
