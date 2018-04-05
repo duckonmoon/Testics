@@ -541,8 +541,137 @@ print(anonymus2.nickname)
         <item>Harare</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="finish">Finish</string>
 
+
+    <string name="monuments">Monuments</string>
+    <string name="monuments_question1">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question2">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question3">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question4">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question5">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question6">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question7">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question8">
+        Where is situated this monument?
+    </string>
+
+    <string name="monuments_question9">
+       Where is situated this monument?
+    </string>
+
+    <string name="monuments_question10">
+Where is situated this monument?    </string>
+
+    <string name="monuments_correct1">Berlin</string>
+
+    <string name="monuments_correct2">Chicago</string>
+
+    <string name="monuments_correct3">Rome</string>
+
+    <string name="monuments_correct4">Paris</string>
+
+    <string name="monuments_correct5">New York</string>
+
+    <string name="monuments_correct6">Lviv</string>
+
+    <string name="monuments_correct7">Cairo</string>
+
+    <string name="monuments_correct8">Agra</string>
+
+    <string name="monuments_correct9">Washington</string>
+
+    <string name="monuments_correct10">Venice</string>
+
+    <string-array name="monuments_answers1">
+        <item>Berlin</item>
+        <item>Viena</item>
+        <item>Prague</item>
+        <item>Florence</item>
+    </string-array>
+
+    <string-array name="monuments_answers2">
+        <item>Melburn</item>
+        <item>Chicago</item>
+        <item>Amsterdam</item>
+        <item>California</item>
+    </string-array>
+
+    <string-array name="monuments_answers3">
+        <item>Las Vegas</item>
+        <item>Milan</item>
+        <item>Rome</item>
+        <item>Naponi</item>
+    </string-array>
+
+    <string-array name="monuments_answers4">
+        <item>Texas</item>
+        <item>Ottava</item>
+        <item>Dencer</item>
+        <item>Paris</item>
+    </string-array>
+
+    <string-array name="monuments_answers5">
+        <item>Chicago</item>
+        <item>Bologna</item>
+        <item>New York</item>
+        <item>Berlin</item>
+    </string-array>
+
+    <string-array name="monuments_answers6">
+        <item>Lviv</item>
+        <item>Kiyv</item>
+        <item>Odessa</item>
+        <item>Charkiv</item>
+    </string-array>
+
+    <string-array name="monuments_answers7">
+        <item>Cairo</item>
+        <item>Sharm El Sheikh</item>
+        <item>Kongo</item>
+        <item>Hurgada</item>
+    </string-array>
+
+    <string-array name="monuments_answers8">
+        <item>New Deli</item>
+        <item>Oman</item>
+        <item>Agra</item>
+        <item>Mumbai</item>
+    </string-array>
+
+    <string-array name="monuments_answers9">
+        <item>Washington</item>
+        <item>New York</item>
+        <item>Dakota</item>
+        <item>Alasca</item>
+    </string-array>
+
+    <string-array name="monuments_answers10">
+        <item>Florence</item>
+        <item>Toscana</item>
+        <item>Venice</item>
+        <item>Pekin</item>
+    </string-array>
 </resources>

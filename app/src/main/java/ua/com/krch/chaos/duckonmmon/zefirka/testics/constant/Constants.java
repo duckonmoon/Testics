@@ -27,7 +27,22 @@ public interface Constants {
                             new ConstantQuestion(null,R.string.python_question10,R.string.python_correct10,R.array.python_answers10)
                     ),null),
             new Test(R.string.java, R.drawable.java, 20, "JAVA",null,null),
-            new Test(R.string.capitals, R.drawable.capitals, 20, "CAPITAL",null,null)
+            new Test(R.string.capitals, R.drawable.capitals, 20, "CAPITAL",null,null),
+            new Test(R.string.monuments, R.drawable.monuments, 10, "MONUMENTS",
+                    Arrays.asList(
+                            new ConstantQuestion(R.drawable.branderburg,R.string.monuments_question1,R.string.monuments_correct1,R.array.monuments_answers1),
+                            new ConstantQuestion(R.drawable.cicago,R.string.monuments_question2,R.string.monuments_correct2,R.array.monuments_answers2),
+                            new ConstantQuestion(R.drawable.coloseum,R.string.monuments_question3,R.string.monuments_correct3,R.array.monuments_answers3),
+                            new ConstantQuestion(R.drawable.eiffel_tower,R.string.monuments_question4,R.string.monuments_correct4,R.array.monuments_answers4),
+                            new ConstantQuestion(R.drawable.liberti,R.string.monuments_question5,R.string.monuments_correct5,R.array.monuments_answers5),
+                            new ConstantQuestion(R.drawable.lviv_opera,R.string.monuments_question6,R.string.monuments_correct6,R.array.monuments_answers6),
+                            new ConstantQuestion(R.drawable.piramidu,R.string.monuments_question7,R.string.monuments_correct7,R.array.monuments_answers7),
+                            new ConstantQuestion(R.drawable.tadj_mahal,R.string.monuments_question8,R.string.monuments_correct8,R.array.monuments_answers8),
+                            new ConstantQuestion(R.drawable.vachington,R.string.monuments_question9,R.string.monuments_correct9,R.array.monuments_answers9),
+                            new ConstantQuestion(R.drawable.venice,R.string.monuments_question10,R.string.monuments_correct10,R.array.monuments_answers10)
+
+                    )
+                    ,null)
     );
     int res020=R.drawable.res20_0;
     int res2040=R.drawable.res40_20;
