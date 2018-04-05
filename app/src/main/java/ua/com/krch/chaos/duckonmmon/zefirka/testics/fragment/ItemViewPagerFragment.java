@@ -73,7 +73,7 @@ public class ItemViewPagerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item_view_pager, container, false);
         ButterKnife.bind(this, view);
 
-        Question question = QuestionProviderService.getQuestion(test.getQuestions().get(position), test.getRandomAnswers());
+        Question question = QuestionProviderService.getQuestion(test.getQuestions().get(position), test.getRandomAnswers(),test.getRandomAnswersArray());
 
         questionTextView.setText(question.getQuestion());
         if (question.getImage() != null) {
